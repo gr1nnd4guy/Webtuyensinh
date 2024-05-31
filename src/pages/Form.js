@@ -3,6 +3,7 @@ import { Container, Form, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RegistrationForm = () => {
+    
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -26,9 +27,9 @@ const RegistrationForm = () => {
     };
 
     return (
-        <Container className="mt-5">
-            <h2>Form Đăng Ký Khóa Học</h2>
-            <Form onSubmit={handleSubmit}>
+        <Container className="mt-5 card pt-2 pb-3" style={{backgroundColor:'#f27f24', color:'white'}}>
+            <h2 className='fw-semibold text-center '>Form Đăng Ký Khóa Học</h2>
+            <Form className="fw-bold" onSubmit={handleSubmit}>
                 <Form.Group controlId="fullName">
                     <Form.Label>Họ và tên</Form.Label>
                     <Form.Control
@@ -99,7 +100,7 @@ const RegistrationForm = () => {
                     </Form.Select>
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className='mt-3 fw-semibold' style={{backgroundColor:'#9B3922', color:'white', border:'none'}}>
                     Đăng Ký
                 </Button>
             </Form>

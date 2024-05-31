@@ -1,12 +1,12 @@
 import "./App.css";
 import NotFoundPage from "./pages/404page";
 import Home from "./pages/Homepage";
-import ANMpage from "./pages/ANMpage";
-import AWpage from "./pages/AWSpage";
-import CEHpage from "./pages/CEHpage";
-import LTMTpage from "./pages/LTMTpage";
-import Regpage from "./pages/Regpage";
-import TKDHpage from "./pages/TKDHpage";
+import ANM from "./pages/ANMpage";
+import AWS from "./pages/AWSpage";
+import CEH from "./pages/CEHpage";
+import LTW from "./pages/LTMTpage";
+import Reg from "./pages/Regpage";
+import TKDH from "./pages/TKDHpage";
 import { Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./pages/Navbar";
@@ -17,12 +17,12 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/Home" element={<Home/>} />
-        <Route path="/ANM" element={<ANMpage/>} />
-        <Route path="/AWS" element={<AWpage/>} />
-        <Route path="/CEH" element={<CEHpage/>} />
-        <Route path="/LTMT" element={<LTMTpage/>} />
-        <Route path="/Reg" element={<Regpage/>} />
-        <Route path="/TKDH" element={<TKDHpage/>} />
+        <Route path="/ANM" element={<ANM/>} />
+        <Route path="/AWS" element={<AWS/>} />
+        <Route path="/CEH" element={<CEH/>} />
+        <Route path="/LTMT" element={<LTW/>} />
+        <Route path="/Reg" element={<Reg/>} />
+        <Route path="/TKDH" element={<TKDH/>} />
         <Route path="*" element={<NotFoundPage/>} />
       </Routes>
       <Footer/>

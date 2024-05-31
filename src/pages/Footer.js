@@ -83,6 +83,7 @@ const Footer = () => {
                     type="email"
                     id="form5Example24"
                     className="form-control"
+                    placeholder="Nhập email"
                   />
                   
                 </div>

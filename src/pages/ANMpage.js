@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import "./style.css";
 import banner from "../pages/imgs/bn-anm.jpg";
 import RegistrationForm from "./Form";
@@ -152,25 +151,13 @@ function ANM() {
             <div className="col-6">
             <RegistrationForm/>
             </div>
-            <div className="col-6 ">
-                <ul>
-                    <li>
-                        <Link to="/LTMT" style={{textDecoration:'none', color:'black'}}>Lập trình máy tính</Link>
-
-                    </li>
-                    <li>
-                        <Link to="/LTMT" style={{textDecoration:'none', color:'black'}}>Lập trình máy tính</Link>
-
-                    </li>
-                    <li>
-                        <Link to="/LTMT" style={{textDecoration:'none', color:'black'}}>Lập trình máy tính</Link>
-
-                    </li>
-                    <li>
-                        <Link to="/LTMT" style={{textDecoration:'none', color:'black'}}>Lập trình máy tính</Link>
-
-                    </li>
-                </ul>
+            <div className="col-6 mt-5">
+            <img
+          src={"https://img.freepik.com/free-vector/flat-safer-internet-day-background_23-2151163157.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716768000&semt=ais_user"}
+          alt="course"
+          className="img-fluid pt-2 rounded img-thumbnail"
+          width="100%"
+        />
             </div>
           </div>
         </div>
