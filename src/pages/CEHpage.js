@@ -127,7 +127,7 @@ function CEH() {
               className="col-md text-center fw-semibold "
               style={textheadStyle}
             >
-              Form đăng ký
+              Ứng tuyển ngay
             </div>
           </div>
           <div className="row pt-1">

@@ -221,7 +221,7 @@ function TKDH() {
               className="col-md text-center fw-semibold "
               style={textheadStyle}
             >
-              Form đăng ký
+              Ứng tuyển ngay
             </div>
           </div>
           <div className="row pt-1">
@@ -231,10 +231,10 @@ function TKDH() {
             <div className="col-6 mt-5">
               <img
                 src={
-                  "https://www.perforce.com/sites/default/files/styles/social_preview_image/public/image/2020-01/image-blog-future-software-development.png?itok=eO9Fa9k-"
+                  "https://mondo.com/wp-content/uploads/2022/12/does-canva-take-the-place-of-a-graphic-designer-2022.jpg-.jpg "
                 }
                 alt="course"
-                className="img-fluid rounded img-thumbnail"
+                className="img-fluid rounded img-thumbnail mt-4"
                 width="100%"
               />
             </div>

@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { Container, Form, Button } from 'react-bootstrap';
+import { useMutation } from 'react-query';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const RegistrationForm = () => {
-    
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        registrationType: '',
-        selectedSubject: ''
-    });
+    const [formData, setFormData] = useState({});
+    const mutation = useMutation(formData =>
+        axios.post('https://sheet.best/api/sheets/b0fd887a-bd72-4263-b98e-16d1753bb388', formData)
+    );
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        mutation.mutate(formData);
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -20,15 +23,10 @@ const RegistrationForm = () => {
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-        // Thêm logic để gửi formData đến Google Sheets hoặc backend service khác
-    };
-
     return (
-        <Container className="mt-5 card pt-2 pb-3" style={{backgroundColor:'#f27f24', color:'white'}}>
-            <h2 className='fw-semibold text-center '>Form Đăng Ký Khóa Học</h2>
+        <Container className="mt-5 card pt-2 pb-3" style={{ backgroundColor: '#f27f24', color: 'white' }}>
+            <h2 className='fw-light text-start '>5 SUẤT ƯU ĐÃI HỌC PHÍ 50%</h2>
+            <h2 className='fw-semibold text-start '>Đăng ký xét tuyển ngay</h2>
             <Form className="fw-bold" onSubmit={handleSubmit}>
                 <Form.Group controlId="fullName">
                     <Form.Label>Họ và tên</Form.Label>
@@ -36,7 +34,7 @@ const RegistrationForm = () => {
                         type="text"
                         placeholder="Nhập họ và tên"
                         name="fullName"
-                        value={formData.fullName}
+                        value={formData.fullName || ''}
                         onChange={handleChange}
                         required
                     />
@@ -48,7 +46,7 @@ const RegistrationForm = () => {
                         type="email"
                         placeholder="Nhập email"
                         name="email"
-                        value={formData.email}
+                        value={formData.email || ''}
                         onChange={handleChange}
                         required
                     />
@@ -60,7 +58,7 @@ const RegistrationForm = () => {
                         type="tel"
                         placeholder="Nhập số điện thoại"
                         name="phone"
-                        value={formData.phone}
+                        value={formData.phone || ''}
                         onChange={handleChange}
                         required
                     />
@@ -71,7 +69,7 @@ const RegistrationForm = () => {
                     <Form.Control
                         as="select"
                         name="registrationType"
-                        value={formData.registrationType}
+                        value={formData.registrationType || ''}
                         onChange={handleChange}
                         required
                     >
@@ -85,9 +83,10 @@ const RegistrationForm = () => {
 
                 <Form.Group controlId="selectedSubject">
                     <Form.Label>Chọn môn học</Form.Label>
-                    <Form.Select
+                    <Form.Control
+                        as="select"
                         name="selectedSubject"
-                        value={formData.selectedSubject}
+                        value={formData.selectedSubject || ''}
                         onChange={handleChange}
                         required
                     >
@@ -97,12 +96,13 @@ const RegistrationForm = () => {
                         <option value="graphic_design">Thiết kế đồ hoạ</option>
                         <option value="ces">CES</option>
                         <option value="whs_cloud_foundation">WHS Cloud Foundation</option>
-                    </Form.Select>
+                    </Form.Control>
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className='mt-3 fw-semibold' style={{backgroundColor:'#9B3922', color:'white', border:'none'}}>
-                    Đăng Ký
+                <Button variant="primary" type="submit" className='mt-3 fw-semibold' style={{ backgroundColor: '#9B3922', color: 'white', border: 'none' }} disabled={mutation.isLoading}>
+                    {mutation.isLoading ? 'Đang gửi...' : 'Đăng Ký'}
                 </Button>
+                {mutation.isError && <div style={{ color: 'red', marginTop: '10px' }}>Có lỗi xảy ra khi gửi dữ liệu. Vui lòng thử lại sau.</div>}
             </Form>
         </Container>
     );
