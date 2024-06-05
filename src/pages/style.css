@@ -88,6 +88,49 @@
     animation-timing-function: ease-out;
   }
 
-
+  body.dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .card.dark-mode {
+    background-color: #1e1e1e;
+  }
+  
+  .button_top.dark-mode {
+    background-color: #444;
+    color: white;
+  }
+  
+  .heading-container.dark-mode {
+    color: white;
+  }
+  
+  .navbar {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .navbar .dark-mode-toggle {
+    background: none;
+    border: none;
+    color: black;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  body.dark-mode .navbar {
+    background-color: black;
+  }
+  
+  body.dark-mode .navbar .dark-mode-toggle {
+    border-color: #ddd;
+    color: #ddd;
+  }
+  
 
   
