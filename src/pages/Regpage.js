@@ -7,11 +7,11 @@ function Regpage() {
         <div>
             <section className="container">
                 <div className="row">
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-m-3">
                         <h1>Đăng ký xét tuyển</h1>
                         <RegistrationForm/>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 col-m-3">
                         <Dashboard/>
                     </div>
                 </div>
