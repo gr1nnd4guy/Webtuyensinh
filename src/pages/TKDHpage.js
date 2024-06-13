@@ -2,23 +2,27 @@ import React from "react";
 import "./style.css";
 import banner from "../pages/imgs/bn-tkdh.jpg";
 import RegistrationForm from "./Form";
-
+import { DarkModeContext } from "./DarkModeContext";
+import { useContext } from "react";
 function TKDH() {
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const textheadStyle = {
     color: "#f27f24",
     fontSize: "40px",
   };
   const textpStyle = {
-    color: "black",
+    color: "#f27f24",
     fontSize: "19px",
   };
 
   return (
     <div
-      style={{
-        background: "white",
-      }}
-    >
+    style={{ background: isDarkMode ? '#242526' : 'white' }}>
+    <nav className="navbar row">
+              <button className="dark-mode-toggle col-m" onClick={toggleDarkMode}>
+                  {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+              </button>
+          </nav>
       <section className="">
         <img
           src={banner}
@@ -199,7 +203,7 @@ function TKDH() {
             style={textpStyle}
           >
             <div
-              className="card col-md-auto border-0"
+              className="card col-md-auto border-0 mt-3 mb-5"
               style={{ background: "white" }}
             >
               <div className="card-body">
@@ -214,29 +218,27 @@ function TKDH() {
           </div>
         </div>
       </section>
-      <section className="pb-5" style={{ background: "#f5f5f5" }}>
-        <div className="container">
+      <section className="pb-5" style={{ background: isDarkMode ? '#242526' : 'white' }}>
+        <div className="container" >
           <div className="row pt-4 ">
             <div
               className="col-md text-center fw-semibold "
               style={textheadStyle}
             >
-              Ứng tuyển ngay
+              Form đăng ký
             </div>
           </div>
-          <div className="row pt-1">
-            <div className="col-6">
-              <RegistrationForm />
+          <div className="row pt-1" >
+            <div className="col-md-6 col-m">
+            <RegistrationForm/>
             </div>
             <div className="col-6 mt-5">
-              <img
-                src={
-                  "https://mondo.com/wp-content/uploads/2022/12/does-canva-take-the-place-of-a-graphic-designer-2022.jpg-.jpg "
-                }
-                alt="course"
-                className="img-fluid rounded img-thumbnail mt-4"
-                width="100%"
-              />
+            <img
+          src={"https://img.freepik.com/free-vector/flat-safer-internet-day-background_23-2151163157.jpg?size=626&ext=jpg&ga=GA1.1.2082370165.1716768000&semt=ais_user"}
+          alt="course"
+          className="img-fluid pt-2 rounded img-thumbnail"
+          width="100%"
+        />
             </div>
           </div>
         </div>

@@ -1,20 +1,19 @@
 import React from 'react';
-import RegistrationForm from './Form';
-import Dashboard from './Dashboard';
+import RegisForm from './Form';
 
 function Regpage() {
     return (
         <div>
             <section className="container">
-                <div className="row">
-                    <div className="col-md-6 col-m-3">
-                        <h1>Đăng ký xét tuyển</h1>
-                        <RegistrationForm/>
-                    </div>
-                    <div className="col-md-6 col-m-3">
-                        <Dashboard/>
-                    </div>
-                </div>
+                
+                    
+                        <div className="row text-center d-flex justify-content-center">
+                        
+                        <RegisForm/>
+                        </div>
+                    
+                    
+                
             </section>
             
         </div>

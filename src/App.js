@@ -11,10 +11,16 @@ import { Routes, Route } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from "./pages/Navbar";
 import Footer from "./pages/Footer";
+import Admin from "./Admin/constant/Dashboard";
+import DarkModeProvider from "./pages/DarkModeContext";
+import "./pages/style.css"
+
 function App() {
   return (
     <div className="App">
       <NavBar/>
+    
+      <DarkModeProvider>
       <Routes>
         <Route path="/Home" element={<Home/>} />
         <Route path="/ANM" element={<ANM/>} />
@@ -24,7 +30,9 @@ function App() {
         <Route path="/Reg" element={<Reg/>} />
         <Route path="/TKDH" element={<TKDH/>} />
         <Route path="*" element={<NotFoundPage/>} />
+        <Route path="/Dashboard" element={<Admin/>} />
       </Routes>
+      </DarkModeProvider>
       <Footer/>
       
     </div>
