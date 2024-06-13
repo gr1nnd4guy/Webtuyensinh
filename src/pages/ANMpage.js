@@ -1,26 +1,30 @@
 import React from "react";
+import { useContext } from "react";
 import "./style.css";
 import banner from "../pages/imgs/bn-anm.jpg";
 import RegistrationForm from "./Form";
-
+import { DarkModeContext } from "./DarkModeContext";
 function ANM() {
+
+  const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
   const textheadStyle = {
     color: "#f27f24",
     fontSize: "40px",
     
   };
   const textpStyle = {
-    color: "black",
+    color: "#f27f24",
     fontSize: "19px",
     
   };
 
   return (
-    <div
-      style={{
-        background: "white",
-      }}
-    >
+    <div style={{ background: isDarkMode ? '#242526' : 'white' }}>
+      <nav className="navbar row">
+                <button className="dark-mode-toggle col-m" onClick={toggleDarkMode}>
+                    {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+                </button>
+            </nav>
       <section className="">
         <img
           src={banner}
@@ -129,16 +133,16 @@ function ANM() {
                 
             </div>
             <div className="row-md text-start fw-normal d-flex justify-content-center " style={textpStyle}>
-                <div className="card col-md-auto border-0" style={{background:'white',}}>
-                    <div className="card-body">
+                <div className="mt-5 mb-5  card col-md-auto border-0" style={{background:'white',}}>
+                    <div className="mb-3 ms-3 me-3">
                         <img src="https://ispace.edu.vn/wp-content/uploads/2020/09/ANM_HKSS@2x-768x69.png" alt="course" className="card-img-top pt-2 rounded " style={{width:'100%'}}/>
                     </div>
                 </div>
                 </div>
         </div>
       </section>
-      <section className="pb-5" style={{background:'#f5f5f5'}}>
-        <div className="container">
+      <section className="pb-5" style={{ background: isDarkMode ? '#242526' : 'white' }}>
+        <div className="container" >
           <div className="row pt-4 ">
             <div
               className="col-md text-center fw-semibold "
@@ -148,7 +152,7 @@ function ANM() {
             </div>
           </div>
           <div className="row pt-1" >
-            <div className="col-6">
+            <div className="col-md-6 col-m">
             <RegistrationForm/>
             </div>
             <div className="col-6 mt-5">

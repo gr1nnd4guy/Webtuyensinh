@@ -21,7 +21,7 @@ const NavBar = () => {
     };
 
     return (
-      <header className={`headerMain ${scroll ? "sticky" : ""}`} >
+      <header  className={`headerMain ${scroll ? "sticky" : ""}`} >
         <nav className="navbar navbar-expand-lg navbar-light bg-light ">
         <div className="container-fluid m-3">
           <Link className="navbar-brand" to="/">
@@ -105,6 +105,11 @@ const NavBar = () => {
               <li className="nav-item" style={textStyle}>
                 <Link className="nav-link" to="/Reg">
                   Đăng ký
+                </Link>
+              </li>
+              <li className="nav-item" style={textStyle}>
+                <Link className="nav-link" to="/Dashboard">
+                  Dashboard
                 </Link>
               </li>
             </ul>

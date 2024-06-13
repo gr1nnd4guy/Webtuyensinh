@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import './style.css';
 import banner from '../pages/imgs/banner.jpg';
+import { DarkModeContext } from './DarkModeContext';
 
 function Home() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    const toggleDarkMode = () => {
-        setIsDarkMode(!isDarkMode);
-        document.body.classList.toggle('dark-mode', !isDarkMode);
-    };
+    const { isDarkMode, toggleDarkMode } = useContext(DarkModeContext);
 
     const containerStyle = {
         display: 'flex',
@@ -32,13 +28,13 @@ function Home() {
 
     return (
         <div style={{ background: isDarkMode ? '#121212' : 'white' }}>
-            <nav className="navbar row ">
+            <nav className="navbar row">
                 <button className="dark-mode-toggle col-m" onClick={toggleDarkMode}>
                     {isDarkMode ? 'Light Mode' : 'Dark Mode'}
                 </button>
             </nav>
             <section>
-                <img src={banner} alt="course" className="img-fluid pt-2 rounded " width="100%" />
+                <img src={banner} alt="course" className="img-fluid pt-2 rounded" width="100%" />
             </section>
 
             <section>
@@ -49,7 +45,7 @@ function Home() {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-2 pt-5 ">
+                        <div className="col-md-2 pt-5">
                             <div className={`card ${isDarkMode ? 'dark-mode' : ''}`} style={containerStyle}>
                                 <img src="https://ispace.edu.vn/wp-content/uploads/2021/03/ANM_3.png" alt="course" className="card-img-top pt-2 rounded" style={imageStyle} />
                                 <div className="card-body text-center">
